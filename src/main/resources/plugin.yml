@@ -1,0 +1,15 @@
+name: LilithServerEssential
+version: '${version}'
+main: eu.lilithmonodia.lilithserveressential.LilithServerEssential
+api-version: 1.19
+commands:
+  hub:
+    description: A command made to teleport a player to the hub
+    usage: /hub
+    permission: LilithServerEssential.hub
+    permission-message: You don't have <permission>
+  survivalSpawn:
+    description: A command made to teleport a player at the spawn of the survival world
+    usage: /survivalSpawn
+    permission: LilithServerEssential.survivalSpawn
+    permission-message: You don't have <permission>
