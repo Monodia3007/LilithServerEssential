@@ -1,11 +1,13 @@
 package eu.lilithmonodia.lilithserveressential.command;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,8 +20,11 @@ public class HubCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
-            sender.sendMessage("Cette commande n'est utilisable que par un joueur !");
-            Bukkit.dispatchCommand(sender, "/execute in minecraft:lobby run tp @s 50 175 125");
+            World lobby = null;
+            for (World world:Bukkit.getWorlds()) {
+                if (world.getName().equals("lobby")) lobby = world;
+            }
+            player.teleport(new Location(lobby, 50.5, 175, 125.5));
             return true;
         } else {
             sender.sendMessage("Cette commande n'est utilisable que par un joueur !");
