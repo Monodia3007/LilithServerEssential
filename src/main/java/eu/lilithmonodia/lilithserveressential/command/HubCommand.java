@@ -29,6 +29,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
                 return true;
             } else {
                 sender.sendMessage("There is no world named lobby on the server");
+                return false;
             }
         } else {
             sender.sendMessage("Cette commande n'est utilisable que par un joueur !");
