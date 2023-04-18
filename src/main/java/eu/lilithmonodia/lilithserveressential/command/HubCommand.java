@@ -24,8 +24,12 @@ public class HubCommand implements CommandExecutor, TabCompleter {
             for (World world:Bukkit.getWorlds()) {
                 if (world.getName().equals("lobby")) lobby = world;
             }
-            player.teleport(new Location(lobby, 50.5, 175, 125.5));
-            return true;
+            if (lobby != null) {
+                player.teleport(lobby.getSpawnLocation());
+                return true;
+            } else {
+                sender.sendMessage("There is no world named lobby on the server");
+            }
         } else {
             sender.sendMessage("Cette commande n'est utilisable que par un joueur !");
             return false;
