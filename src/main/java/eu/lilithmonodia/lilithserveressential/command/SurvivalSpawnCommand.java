@@ -17,6 +17,7 @@ public class SurvivalSpawnCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
+            sender.sendMessage("Cette commande n'est utilisable que par un joueur !");
             Bukkit.dispatchCommand(sender, "/execute in minecraft:overworld run tp @s 14 254 31");
             return true;
         } else {
