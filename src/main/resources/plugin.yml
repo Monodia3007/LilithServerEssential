@@ -8,3 +8,8 @@ commands:
     usage: /hub
     permission: LilithServerEssential.hub
     permission-message: You don't have <permission>
+  sethub:
+    description: A command to change the hub world
+    usage: /sethub <world-name>
+    permission: LilithServerEssential.sethub
+    permission-message: You don't have <permission>
