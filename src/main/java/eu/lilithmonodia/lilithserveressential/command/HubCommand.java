@@ -1,5 +1,6 @@
 package eu.lilithmonodia.lilithserveressential.command;
 
+import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -7,21 +8,23 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class HubCommand implements CommandExecutor, TabCompleter {
+    private LilithServerEssential plugin;
 
-    public HubCommand () {}
+    public HubCommand (LilithServerEssential plugin) {
+        this.plugin = plugin;
+    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
             if (Bukkit.getWorld("lobby") != null) {
-                player.teleport(new Location(Bukkit.getWorld("lobby"), 50.5, 175, 125.5));
+                player.teleport(new Location(Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()), 50.5, 175, 125.5));
                 return true;
             } else {
                 sender.sendMessage("Aucun monde nommé lobby existe sur ce serveur");
