@@ -1,6 +1,7 @@
 package eu.lilithmonodia.lilithserveressential;
 
 import eu.lilithmonodia.lilithserveressential.command.HubCommand;
+import eu.lilithmonodia.lilithserveressential.command.SetHubCommand;
 import eu.lilithmonodia.lilithserveressential.configuration.Configuration;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,6 +18,12 @@ public final class LilithServerEssential extends JavaPlugin {
         configuration = Configuration.fromConfig(getConfig());
 
         registerCommand("hub", new HubCommand(this));
+        registerCommand("sethub", new SetHubCommand(this));
+    }
+
+    public void reload() {
+        reloadConfig();
+        configuration = Configuration.fromConfig(getConfig());
     }
 
     public Configuration getConfiguration() {
