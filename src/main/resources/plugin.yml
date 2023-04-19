@@ -1,5 +1,6 @@
 name: LilithServerEssential
 version: '${version}'
+author: Lilith-Monodia
 main: eu.lilithmonodia.lilithserveressential.LilithServerEssential
 api-version: 1.19
 commands:

@@ -24,6 +24,7 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         plugin.getConfig().addDefault("lobby-world", label);
         plugin.saveConfig();
+        sender.sendMessage(plugin.getConfiguration().lobbyWorld());
         return true;
     }
 
