@@ -26,7 +26,7 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
         if (args.length > 1) {
             plugin.getConfig().set("lobby-world", args[1]);
         } else if (sender instanceof Player player) {
-            plugin.getConfig().set("lobby-world", player.getWorld());
+            plugin.getConfig().set("lobby-world", player.getWorld().getName());
         } else {
             sender.sendMessage("Please enter a valid argument");
             return false;
