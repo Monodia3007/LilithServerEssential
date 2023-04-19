@@ -31,10 +31,8 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
             sender.sendMessage("Please enter a valid argument");
             return false;
         }
-        sender.sendMessage(""+args.length);
         plugin.saveConfig();
         plugin.reload();
-        sender.sendMessage(plugin.getConfiguration().lobbyWorld());
         return true;
     }
 

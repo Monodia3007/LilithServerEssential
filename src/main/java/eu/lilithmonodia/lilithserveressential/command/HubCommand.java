@@ -23,7 +23,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
-            if (Bukkit.getWorld("lobby") != null) {
+            if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
                 player.teleport(Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()).getSpawnLocation());
                 return true;
             } else {

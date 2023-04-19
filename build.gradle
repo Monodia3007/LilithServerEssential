@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'eu.lilithmonodia'
-version = '1.3 - TEST'
+version = '1.3'
 
 repositories {
     mavenCentral()
