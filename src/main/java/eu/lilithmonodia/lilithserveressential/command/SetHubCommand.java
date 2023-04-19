@@ -22,9 +22,7 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        plugin.getConfig().addDefault("lobby-world", label);
-        plugin.saveConfig();
-        plugin.reloadConfig();
+        plugin.getConfig().set("lobby-world", label);
         sender.sendMessage(plugin.getConfiguration().lobbyWorld());
         return true;
     }
