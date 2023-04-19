@@ -23,8 +23,8 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (args.length >= 1) {
-            plugin.getConfig().set("lobby-world", args[0]);
+        if (args.length > 1) {
+            plugin.getConfig().set("lobby-world", args[1]);
         } else if (sender instanceof Player player) {
             plugin.getConfig().set("lobby-world", player.getWorld());
         } else {
