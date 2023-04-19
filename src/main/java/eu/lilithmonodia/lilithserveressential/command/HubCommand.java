@@ -24,7 +24,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
             if (Bukkit.getWorld("lobby") != null) {
-                player.teleport(new Location(Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()), 50.5, 175, 125.5));
+                player.teleport(Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()).getSpawnLocation());
                 return true;
             } else {
                 sender.sendMessage("Aucun monde nommé " + plugin.getConfiguration().lobbyWorld() + " existe sur ce serveur");
