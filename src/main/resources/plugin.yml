@@ -1,16 +1,21 @@
 name: LilithServerEssential
 version: '${version}'
 author: Lilith-Monodia
+website: https://github.com/Redrock18/LilithServerEssential
 main: eu.lilithmonodia.lilithserveressential.LilithServerEssential
 api-version: 1.19
 commands:
   hub:
     description: A command made to teleport a player to the hub
     usage: /hub
+    aliases:
+      - lobby
     permission: LilithServerEssential.hub
     permission-message: You don't have <permission>
   sethub:
     description: A command to change the hub world
     usage: /sethub <world-name>
+    aliases:
+      - setlobby
     permission: LilithServerEssential.sethub
     permission-message: You don't have <permission>
