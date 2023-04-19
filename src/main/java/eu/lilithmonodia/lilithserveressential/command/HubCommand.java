@@ -27,7 +27,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
                 player.teleport(new Location(Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()), 50.5, 175, 125.5));
                 return true;
             } else {
-                sender.sendMessage("Aucun monde nommé lobby existe sur ce serveur");
+                sender.sendMessage("Aucun monde nommé " + plugin.getConfiguration().lobbyWorld() + " existe sur ce serveur");
                 return false;
             }
         } else {
