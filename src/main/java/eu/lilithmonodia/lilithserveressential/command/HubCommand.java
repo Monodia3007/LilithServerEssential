@@ -2,7 +2,6 @@ package eu.lilithmonodia.lilithserveressential.command;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
