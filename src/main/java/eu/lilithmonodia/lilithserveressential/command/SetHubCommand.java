@@ -32,6 +32,7 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
             return false;
         }
         plugin.saveConfig();
+        plugin.reloadConfig();
         sender.sendMessage(plugin.getConfiguration().lobbyWorld());
         return true;
     }
