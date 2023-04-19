@@ -21,6 +21,11 @@ public final class LilithServerEssential extends JavaPlugin {
         registerCommand("sethub", new SetHubCommand(this));
     }
 
+    public void reload() {
+        reloadConfig();
+        configuration = Configuration.fromConfig(getConfig());
+    }
+
     public Configuration getConfiguration() {
         return configuration;
     }
