@@ -26,9 +26,9 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 4) {
             plugin.getConfig().set("lobby-world", args[0]);
-            plugin.getConfig().set("coordinates.x", args[1]);
-            plugin.getConfig().set("coordinates.y", args[2]);
-            plugin.getConfig().set("coordinates.z", args[3]);
+            plugin.getConfig().set("coordinates.x", Double.valueOf(args[1]));
+            plugin.getConfig().set("coordinates.y", Double.valueOf(args[2]));
+            plugin.getConfig().set("coordinates.z", Double.valueOf(args[3]));
         } else {
             sender.sendMessage("Please enter a valid argument");
             return false;
