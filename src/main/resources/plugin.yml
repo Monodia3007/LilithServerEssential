@@ -14,7 +14,7 @@ commands:
     permission-message: You don't have <permission>
   sethub:
     description: A command to change the hub world
-    usage: /sethub [world-name]
+    usage: /sethub <world-name> <x> <y> <z>
     aliases:
       - setlobby
     permission: LilithServerEssential.sethub
