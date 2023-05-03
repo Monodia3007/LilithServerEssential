@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SetHubCommand implements CommandExecutor, TabCompleter {
@@ -23,10 +24,11 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (args.length > 0) {
+        if (args.length == 4) {
             plugin.getConfig().set("lobby-world", args[0]);
-        } else if (sender instanceof Player player) {
-            plugin.getConfig().set("lobby-world", player.getWorld().getName());
+            plugin.getConfig().set("coordinates.x", args[1]);
+            plugin.getConfig().set("coordinates.y", args[2]);
+            plugin.getConfig().set("coordinates.z", args[3]);
         } else {
             sender.sendMessage("Please enter a valid argument");
             return false;
@@ -38,10 +40,32 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        List<String> worlds = new ArrayList<>();
-        for (World world:Bukkit.getWorlds()) {
-            worlds.add(world.getName());
+        if (sender instanceof Player player) {
+            switch (args.length) {
+                case 1 -> {
+                    List<String> worlds = new ArrayList<>();
+                    for (World world : Bukkit.getWorlds()) {
+                        worlds.add(world.getName());
+                    }
+                    return worlds;
+                }
+                case 2 -> {
+                    return Collections.singletonList(player.getLocation().x() + "");
+                }
+                case 3 -> {
+                    return Collections.singletonList(player.getLocation().y() + "");
+                }
+                case 4 -> {
+                    return Collections.singletonList(player.getLocation().z() + "");
+                }
+            }
+            return null;
+        } else {
+            List<String> worlds = new ArrayList<>();
+            for (World world:Bukkit.getWorlds()) {
+                worlds.add(world.getName());
+            }
+            return worlds;
         }
-        return worlds;
     }
 }

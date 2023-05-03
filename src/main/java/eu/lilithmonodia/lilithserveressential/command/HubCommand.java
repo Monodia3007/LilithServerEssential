@@ -2,6 +2,7 @@ package eu.lilithmonodia.lilithserveressential.command;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,7 +24,12 @@ public class HubCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
             if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
-                player.teleport(Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()).getSpawnLocation());
+                player.teleport(new Location(Bukkit.getWorld(
+                        plugin.getConfiguration().lobbyWorld()),
+                        this.plugin.getConfiguration().x(),
+                        this.plugin.getConfiguration().y(),
+                        this.plugin.getConfiguration().z()
+                ));
                 return true;
             } else {
                 sender.sendMessage("Aucun monde nommé " + plugin.getConfiguration().lobbyWorld() + " existe sur ce serveur");

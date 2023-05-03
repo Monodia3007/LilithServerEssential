@@ -1,2 +1,9 @@
+#The world where the lobby is. default: world
 lobby-world:
-  lobby
+  world
+
+#The coordinates of the lobby. default: x: 0, y: 63, z: 0
+coordinates:
+  - x: 0.0
+  - y: 63.0
+  - z: 0.0
