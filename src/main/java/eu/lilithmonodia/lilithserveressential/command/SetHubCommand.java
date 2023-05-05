@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class SetHubCommand implements CommandExecutor, TabCompleter {
-    LilithServerEssential plugin;
+    private LilithServerEssential plugin;
 
     public SetHubCommand (LilithServerEssential plugin) {
         this.plugin = plugin;
@@ -50,13 +50,13 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
                     return worlds;
                 }
                 case 2 -> {
-                    return Collections.singletonList(player.getLocation().x() + "");
+                    return Collections.singletonList(String.valueOf(player.getLocation().x()));
                 }
                 case 3 -> {
-                    return Collections.singletonList(player.getLocation().y() + "");
+                    return Collections.singletonList(String.valueOf(player.getLocation().y()));
                 }
                 case 4 -> {
-                    return Collections.singletonList(player.getLocation().z() + "");
+                    return Collections.singletonList(String.valueOf(player.getLocation().z()));
                 }
             }
             return null;
