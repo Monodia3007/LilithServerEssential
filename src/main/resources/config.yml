@@ -4,6 +4,11 @@ lobby-world:
 
 #The coordinates of the lobby. default: x: 0, y: 63, z: 0
 coordinates:
-  - x: 0.0
-  - y: 63.0
-  - z: 0.0
+  - lobby:
+    - x: 0.0
+    - y: 63.0
+    - z: 0.0
+  - survival:
+    - x: 0.0
+    - y: 63.0
+    - z: 0.0

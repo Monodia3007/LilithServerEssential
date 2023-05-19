@@ -19,3 +19,13 @@ commands:
       - setlobby
     permission: LilithServerEssential.sethub
     permission-message: You don't have <permission>
+  survivalworld:
+    description: A command to teleport to the spawn of the survival world
+    usage: /survivalworld
+    permission: LilithServerEssential.survivalworld
+    permission-message: You don't have <permission>
+  setsurvivalworld:
+    description: A command to change the survival world
+    usage: /setsurvivalworld <world-name> <x> <y> <z>
+    permission: LilithServerEssential.setsurvivalworld
+    permission-message: You don't have <permission>

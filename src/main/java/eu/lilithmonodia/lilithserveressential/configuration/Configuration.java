@@ -2,13 +2,23 @@ package eu.lilithmonodia.lilithserveressential.configuration;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-public record Configuration(String lobbyWorld, Double x, Double y, Double z) {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public record Configuration(String lobbyWorld, ArrayList<Double> lobbyCoords, ArrayList<Double> survivalCoords) {
     public static Configuration fromConfig(FileConfiguration config) {
         return new Configuration(
                 config.getString("lobby-world"),
-                config.getDouble("coordinates.x"),
-                config.getDouble("coordinates.y"),
-                config.getDouble("coordinates.z")
+                new ArrayList<>(Arrays.asList(
+                        config.getDouble("coordinates.lobby.x"),
+                        config.getDouble("coordinates.lobby.y"),
+                        config.getDouble("coordinates.lobby.z")
+                )),
+                new ArrayList<>(Arrays.asList(
+                        config.getDouble("coordinates.survival.x"),
+                        config.getDouble("coordinates.survival.y"),
+                        config.getDouble("coordinates.survival.z")
+                ))
         );
     }
 }

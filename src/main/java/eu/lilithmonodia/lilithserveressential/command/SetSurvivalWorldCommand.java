@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SetHubCommand implements CommandExecutor, TabCompleter {
+public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
     private LilithServerEssential plugin;
 
-    public SetHubCommand (LilithServerEssential plugin) {
+    public SetSurvivalWorldCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
     }
 
@@ -26,9 +26,9 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 4) {
             plugin.getConfig().set("lobby-world", args[0]);
-            plugin.getConfig().set("coordinates.lobby.x", Double.valueOf(args[1]));
-            plugin.getConfig().set("coordinates.lobby.y", Double.valueOf(args[2]));
-            plugin.getConfig().set("coordinates.lobby.z", Double.valueOf(args[3]));
+            plugin.getConfig().set("coordinates.survival.x", Double.valueOf(args[1]));
+            plugin.getConfig().set("coordinates.survival.y", Double.valueOf(args[2]));
+            plugin.getConfig().set("coordinates.survival.z", Double.valueOf(args[3]));
         } else {
             sender.sendMessage("Please enter a valid argument");
             return false;

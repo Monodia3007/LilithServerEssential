@@ -2,6 +2,8 @@ package eu.lilithmonodia.lilithserveressential;
 
 import eu.lilithmonodia.lilithserveressential.command.HubCommand;
 import eu.lilithmonodia.lilithserveressential.command.SetHubCommand;
+import eu.lilithmonodia.lilithserveressential.command.SetSurvivalWorldCommand;
+import eu.lilithmonodia.lilithserveressential.command.SurvivalWorldCommand;
 import eu.lilithmonodia.lilithserveressential.configuration.Configuration;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,6 +21,8 @@ public final class LilithServerEssential extends JavaPlugin {
 
         registerCommand("hub", new HubCommand(this));
         registerCommand("sethub", new SetHubCommand(this));
+        registerCommand("survivalworld", new SurvivalWorldCommand(this));
+        registerCommand("setsurvivalworld", new SetSurvivalWorldCommand(this));
     }
 
     public void reload() {

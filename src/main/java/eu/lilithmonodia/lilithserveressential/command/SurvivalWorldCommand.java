@@ -13,22 +13,21 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class HubCommand implements CommandExecutor, TabCompleter {
+public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
     private LilithServerEssential plugin;
 
-    public HubCommand (LilithServerEssential plugin) {
+    public SurvivalWorldCommand (LilithServerEssential plugin) {
         this.plugin = plugin;
     }
-
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
             if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
                         plugin.getConfiguration().lobbyWorld()),
-                        this.plugin.getConfiguration().lobbyCoords().get(0),
-                        this.plugin.getConfiguration().lobbyCoords().get(1),
-                        this.plugin.getConfiguration().lobbyCoords().get(2)
+                        this.plugin.getConfiguration().survivalCoords().get(0),
+                        this.plugin.getConfiguration().survivalCoords().get(1),
+                        this.plugin.getConfiguration().survivalCoords().get(2)
                 ));
                 return true;
             } else {
@@ -40,6 +39,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
             return false;
         }
     }
+
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
