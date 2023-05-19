@@ -25,7 +25,7 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 4) {
-            plugin.getConfig().set("lobby-world", args[0]);
+            plugin.getConfig().set("survival-world", args[0]);
             plugin.getConfig().set("coordinates.survival.x", Double.valueOf(args[1]));
             plugin.getConfig().set("coordinates.survival.y", Double.valueOf(args[2]));
             plugin.getConfig().set("coordinates.survival.z", Double.valueOf(args[3]));

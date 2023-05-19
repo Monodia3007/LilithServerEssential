@@ -24,7 +24,7 @@ public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
         if(sender instanceof Player player) {
             if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
-                        plugin.getConfiguration().lobbyWorld()),
+                        plugin.getConfiguration().survivalWorld()),
                         this.plugin.getConfiguration().survivalCoords().get(0),
                         this.plugin.getConfiguration().survivalCoords().get(1),
                         this.plugin.getConfiguration().survivalCoords().get(2)
