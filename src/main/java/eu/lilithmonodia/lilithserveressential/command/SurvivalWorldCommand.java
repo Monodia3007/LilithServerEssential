@@ -22,7 +22,7 @@ public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(sender instanceof Player player) {
-            if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
+            if (Bukkit.getWorld(plugin.getConfiguration().survivalWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
                         plugin.getConfiguration().survivalWorld()),
                         this.plugin.getConfiguration().survivalCoords().get(0),
@@ -31,7 +31,7 @@ public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
                 ));
                 return true;
             } else {
-                sender.sendMessage("Aucun monde nommé " + plugin.getConfiguration().lobbyWorld() + " existe sur ce serveur");
+                sender.sendMessage("Aucun monde nommé " + plugin.getConfiguration().survivalWorld() + " existe sur ce serveur");
                 return false;
             }
         } else {
