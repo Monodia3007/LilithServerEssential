@@ -35,6 +35,7 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
         }
         plugin.saveConfig();
         plugin.reload();
+        sender.sendMessage("Survival world changed");
         return true;
     }
 
@@ -59,7 +60,7 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
                     return Collections.singletonList(String.valueOf(player.getLocation().z()));
                 }
             }
-            return null;
+            return Collections.emptyList();
         } else {
             List<String> worlds = new ArrayList<>();
             for (World world:Bukkit.getWorlds()) {

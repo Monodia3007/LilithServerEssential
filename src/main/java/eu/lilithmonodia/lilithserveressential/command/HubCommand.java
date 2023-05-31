@@ -1,6 +1,7 @@
 package eu.lilithmonodia.lilithserveressential.command;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
+import eu.lilithmonodia.lilithserveressential.TimedTeleport;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -11,10 +12,11 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.List;
 
 public class HubCommand implements CommandExecutor, TabCompleter {
-    private LilithServerEssential plugin;
+    private final LilithServerEssential plugin;
 
     public HubCommand (LilithServerEssential plugin) {
         this.plugin = plugin;
@@ -22,7 +24,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(sender instanceof Player player) {
+        if(sender instanceof Player player && TimedTeleport.timer(player, plugin.getConfiguration().teleportCooldown())) {
             if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
                         plugin.getConfiguration().lobbyWorld()),
@@ -43,6 +45,6 @@ public class HubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        return null;
+        return Collections.emptyList();
     }
 }

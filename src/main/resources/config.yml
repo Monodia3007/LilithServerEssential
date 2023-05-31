@@ -15,3 +15,5 @@ coordinates:
     - x: 0.0
     - y: 63.0
     - z: 0.0
+
+teleport-cooldown: 3000
