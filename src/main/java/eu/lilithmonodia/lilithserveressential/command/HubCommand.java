@@ -1,7 +1,6 @@
 package eu.lilithmonodia.lilithserveressential.command;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
-import eu.lilithmonodia.lilithserveressential.TimedTeleport;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -24,7 +23,7 @@ public class HubCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(sender instanceof Player player && TimedTeleport.timer(player, plugin.getConfiguration().teleportCooldown())) {
+        if(sender instanceof Player player) {
             if (Bukkit.getWorld(plugin.getConfiguration().lobbyWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
                         plugin.getConfiguration().lobbyWorld()),

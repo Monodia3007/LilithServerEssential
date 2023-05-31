@@ -5,7 +5,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<Double> lobbyCoords, ArrayList<Double> survivalCoords, long teleportCooldown) {
+public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<Double> lobbyCoords, ArrayList<Double> survivalCoords) {
     public static Configuration fromConfig(FileConfiguration config) {
         return new Configuration(
                 config.getString("lobby-world"),
@@ -19,8 +19,7 @@ public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<D
                         config.getDouble("coordinates.survival.x"),
                         config.getDouble("coordinates.survival.y"),
                         config.getDouble("coordinates.survival.z")
-                )),
-                config.getLong("teleport-cooldown")
+                ))
         );
     }
 }
