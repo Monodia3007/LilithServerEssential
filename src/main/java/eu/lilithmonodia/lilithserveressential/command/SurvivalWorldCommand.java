@@ -17,12 +17,13 @@ import java.util.List;
 public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
     private final LilithServerEssential plugin;
 
-    public SurvivalWorldCommand (LilithServerEssential plugin) {
+    public SurvivalWorldCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
     }
+
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(sender instanceof Player player) {
+        if (sender instanceof Player player) {
             if (Bukkit.getWorld(plugin.getConfiguration().survivalWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
                         plugin.getConfiguration().survivalWorld()),

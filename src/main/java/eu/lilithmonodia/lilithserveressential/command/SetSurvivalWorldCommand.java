@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
-    private LilithServerEssential plugin;
+    private final LilithServerEssential plugin;
 
     public SetSurvivalWorldCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
@@ -63,7 +63,7 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
             return Collections.emptyList();
         } else {
             List<String> worlds = new ArrayList<>();
-            for (World world:Bukkit.getWorlds()) {
+            for (World world : Bukkit.getWorlds()) {
                 worlds.add(world.getName());
             }
             return worlds;

@@ -10,6 +10,8 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class LilithServerEssential extends JavaPlugin {
     Configuration configuration;
 
@@ -40,7 +42,7 @@ public final class LilithServerEssential extends JavaPlugin {
     }
 
     private <T extends CommandExecutor & TabCompleter> void registerCommand(String name, T command) {
-        PluginCommand pluginCommand = getCommand(name);
+        PluginCommand pluginCommand = Objects.requireNonNull(getCommand(name));
         pluginCommand.setExecutor(command);
         pluginCommand.setTabCompleter(command);
     }

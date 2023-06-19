@@ -16,9 +16,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class SetHubCommand implements CommandExecutor, TabCompleter {
-    private LilithServerEssential plugin;
+    private final LilithServerEssential plugin;
 
-    public SetHubCommand (LilithServerEssential plugin) {
+    public SetHubCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
     }
 
@@ -63,7 +63,7 @@ public class SetHubCommand implements CommandExecutor, TabCompleter {
             return Collections.emptyList();
         } else {
             List<String> worlds = new ArrayList<>();
-            for (World world:Bukkit.getWorlds()) {
+            for (World world : Bukkit.getWorlds()) {
                 worlds.add(world.getName());
             }
             return worlds;
