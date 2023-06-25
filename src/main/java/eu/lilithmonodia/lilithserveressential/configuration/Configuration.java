@@ -5,8 +5,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<Double> lobbyCoords,
-                            ArrayList<Double> survivalCoords, long teleportTimer) {
+public record Configuration(
+        String lobbyWorld,
+        String survivalWorld,
+        ArrayList<Double> lobbyCoords,
+        ArrayList<Double> survivalCoords, long teleportTimer
+) {
     public static Configuration fromConfig(FileConfiguration config) {
         return new Configuration(
                 config.getString("lobby-world"),
