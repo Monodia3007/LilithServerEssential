@@ -28,7 +28,7 @@ public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
      *
      * @param plugin The LilithServerEssential plugin instance associated with this command.
      */
-    public SurvivalWorldCommand (LilithServerEssential plugin) {
+    public SurvivalWorldCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
     }
 
@@ -37,15 +37,15 @@ public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
      * the command is a player and if the survival world exists. If those conditions are met, it teleports
      * the player to the coordinates specified in the survival world.
      *
-     * @param sender Source of the command.
+     * @param sender  Source of the command.
      * @param command Executed command.
-     * @param label Alias of the command which was used.
-     * @param args Passed command arguments.
+     * @param label   Alias of the command which was used.
+     * @param args    Passed command arguments.
      * @return true if the executor was able to execute the command, false if not.
      */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(sender instanceof Player player) {
+        if (sender instanceof Player player) {
             if (Bukkit.getWorld(plugin.getConfiguration().survivalWorld()) != null) {
                 player.teleport(new Location(Bukkit.getWorld(
                         plugin.getConfiguration().survivalWorld()),
@@ -68,10 +68,10 @@ public class SurvivalWorldCommand implements CommandExecutor, TabCompleter {
      * Invoked when the player presses the 'tab' key while writing a command. In this case, it does
      * not offer any suggestions.
      *
-     * @param sender Source of the command.
+     * @param sender  Source of the command.
      * @param command Executed command.
-     * @param label Alias of the command which was used.
-     * @param args Passed command arguments.
+     * @param label   Alias of the command which was used.
+     * @param args    Passed command arguments.
      * @return a List of possible completions for the command.
      */
     @Override

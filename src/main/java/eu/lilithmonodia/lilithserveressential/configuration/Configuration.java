@@ -16,7 +16,8 @@ import java.util.Arrays;
  *     <li>survivalCoords: The x, y, and z coordinates of the survival world.</li>
  * </ul>
  */
-public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<Double> lobbyCoords, ArrayList<Double> survivalCoords) {
+public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<Double> lobbyCoords,
+                            ArrayList<Double> survivalCoords) {
     /**
      * This method converts the configurations received from a FileConfiguration object into a Configuration record.
      *

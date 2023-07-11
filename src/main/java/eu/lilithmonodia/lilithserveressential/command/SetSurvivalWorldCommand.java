@@ -37,10 +37,10 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
      * Executed when a player issues the 'setsurvivalworld' command. This method checks if the usage is correct and,
      * if it is, sets the new survival world parameters in the plugin's config before reloading the plugin.
      *
-     * @param sender Source of the command.
+     * @param sender  Source of the command.
      * @param command Executed command.
-     * @param label Alias of the command which was used.
-     * @param args Passed command arguments - expected to be name of the world and x, y, z coordinates for the survival world.
+     * @param label   Alias of the command which was used.
+     * @param args    Passed command arguments - expected to be name of the world and x, y, z coordinates for the survival world.
      * @return true if the executor was able to set the survival world, false if not.
      */
     @Override
@@ -69,10 +69,10 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
      * Invoked when the player presses the 'tab' key while writing a command.
      * Displays available worlds and fills in the player's current coordinates as suggestions.
      *
-     * @param sender Source of the command.
+     * @param sender  Source of the command.
      * @param command Executed command.
-     * @param label Alias of the command which was used.
-     * @param args Passed command arguments.
+     * @param label   Alias of the command which was used.
+     * @param args    Passed command arguments.
      * @return a List of possible completions for the command, based on the current argument index.
      */
     @Override
