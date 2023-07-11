@@ -22,7 +22,7 @@ import java.util.List;
  * by using the /setsurvivalworld command in the Minecraft chat followed by the world name and x, y, z coordinates.
  */
 public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
-    private LilithServerEssential plugin;
+    private final LilithServerEssential plugin;
 
     /**
      * Instantiates a new SetSurvivalWorldCommand.
@@ -44,7 +44,12 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
      * @return true if the executor was able to set the survival world, false if not.
      */
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(
+            @NotNull CommandSender sender,
+            @NotNull Command command,
+            @NotNull String label,
+            @NotNull String[] args
+    ) {
         if (args.length == 4) {
             plugin.getConfig().set("survival-world", args[0]);
             plugin.getConfig().set("coordinates.survival.x", Double.valueOf(args[1]));
@@ -71,7 +76,12 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
      * @return a List of possible completions for the command, based on the current argument index.
      */
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public @Nullable List<String> onTabComplete(
+            @NotNull CommandSender sender,
+            @NotNull Command command,
+            @NotNull String label,
+            @NotNull String[] args
+    ) {
         if (sender instanceof Player player) {
             switch (args.length) {
                 case 1 -> {
@@ -94,7 +104,7 @@ public class SetSurvivalWorldCommand implements CommandExecutor, TabCompleter {
             return Collections.emptyList();
         } else {
             List<String> worlds = new ArrayList<>();
-            for (World world:Bukkit.getWorlds()) {
+            for (World world : Bukkit.getWorlds()) {
                 worlds.add(world.getName());
             }
             return worlds;

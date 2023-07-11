@@ -1,7 +1,7 @@
 name: LilithServerEssential
 version: '${version}'
 author: Lilith-Monodia
-website: https://github.com/Redrock18/LilithServerEssential
+website: https://github.com/Monodia3007/LilithServerEssential
 main: eu.lilithmonodia.lilithserveressential.LilithServerEssential
 api-version: 1.19
 commands:
