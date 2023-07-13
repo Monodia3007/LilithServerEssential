@@ -24,6 +24,11 @@ import java.util.List;
 
 // Language: Java
 abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
+    /**
+     * The plugin variable represents the instance of LilithServerEssential plugin.
+     * It is declared as final, meaning that its reference cannot be changed once initialized.
+     * This variable is protected, allowing subclasses to access it.
+     */
     protected final LilithServerEssential plugin;
 
     /**

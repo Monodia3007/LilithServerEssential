@@ -24,6 +24,10 @@ import java.util.List;
  */
 
 abstract public class SetCommand implements CommandExecutor, TabCompleter {
+    /**
+     * Represents a protected final variable 'plugin' of type LilithServerEssential.
+     * This variable is used in the code to reference the instance of the plugin.
+     */
     protected final LilithServerEssential plugin;
 
     /**
