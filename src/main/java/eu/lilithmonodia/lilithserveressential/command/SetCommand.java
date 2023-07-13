@@ -18,6 +18,9 @@ import java.util.List;
 /**
  * The SetCommand class is an abstract class that implements the CommandExecutor and TabCompleter interfaces.
  * It provides a base implementation for setting the world and coordinates of a specific location in the configuration file.
+ *
+ * @see CommandExecutor
+ * @see TabCompleter
  */
 
 abstract public class SetCommand implements CommandExecutor, TabCompleter {
