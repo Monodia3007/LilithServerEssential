@@ -1,4 +1,4 @@
-package eu.lilithmonodia.lilithserveressential.command;
+package eu.lilithmonodia.lilithserveressential.command.abstractCommands;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
 import org.bukkit.Bukkit;

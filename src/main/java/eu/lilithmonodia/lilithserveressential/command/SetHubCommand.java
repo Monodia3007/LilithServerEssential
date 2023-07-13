@@ -1,6 +1,7 @@
 package eu.lilithmonodia.lilithserveressential.command;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
+import eu.lilithmonodia.lilithserveressential.command.abstractCommands.SetCommand;
 
 /**
  * This class represents a command to set the hub location in a server plugin.

@@ -1,6 +1,7 @@
 package eu.lilithmonodia.lilithserveressential.command;
 
 import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
+import eu.lilithmonodia.lilithserveressential.command.abstractCommands.TeleportCommand;
 
 import java.util.List;
 
