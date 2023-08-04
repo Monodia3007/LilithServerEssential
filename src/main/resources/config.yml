@@ -9,11 +9,11 @@ survival-world:
 coordinates:
   #The coordinates of the lobby. default: x: 0, y: 63, z: 0
   - lobby:
-    - x: 0.0
-    - y: 63.0
-    - z: 0.0
+      - x: 0.0
+      - y: 63.0
+      - z: 0.0
   #The coordinates of the survival world. default: x: 0, y: 63, z: 0
   - survival:
-    - x: 0.0
-    - y: 63.0
-    - z: 0.0
+      - x: 0.0
+      - y: 63.0
+      - z: 0.0

@@ -45,6 +45,7 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
      * @return the command name
      */
     abstract public String getCommandName();
+
     /**
      * Gets the path prefix associated with this command.
      *
@@ -55,10 +56,10 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
     /**
      * Executes the onCommand method for the given command.
      *
-     * @param sender the command sender
+     * @param sender  the command sender
      * @param command the command being executed
-     * @param label the command label
-     * @param args the command arguments
+     * @param label   the command label
+     * @param args    the command arguments
      * @return true if the command executed successfully, false otherwise
      */
     @Override
@@ -81,10 +82,10 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
     /**
      * Provides tab completion options for the onCommand method.
      *
-     * @param sender the command sender
+     * @param sender  the command sender
      * @param command the command being executed
-     * @param label the command label
-     * @param args the command arguments
+     * @param label   the command label
+     * @param args    the command arguments
      * @return a list of tab completion options for the command arguments
      */
     @Override

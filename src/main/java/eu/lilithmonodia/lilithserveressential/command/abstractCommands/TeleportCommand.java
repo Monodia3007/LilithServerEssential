@@ -46,6 +46,7 @@ abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
      * @return The configuration world as a String.
      */
     abstract public String getConfigWorld();
+
     /**
      * Get the coordinates of the configuration.
      *
@@ -86,10 +87,10 @@ abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
     /**
      * This method is called when a tab completion is requested for a command.
      *
-     * @param sender the command sender that requested the tab completion
+     * @param sender  the command sender that requested the tab completion
      * @param command the command object being tab completed
-     * @param label the label of the command being tab completed
-     * @param args the arguments provided for the command being tab completed
+     * @param label   the label of the command being tab completed
+     * @param args    the arguments provided for the command being tab completed
      * @return a list of possible tab completions for the command
      */
     @Override
