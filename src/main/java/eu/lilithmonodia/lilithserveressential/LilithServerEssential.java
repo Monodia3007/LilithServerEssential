@@ -27,32 +27,6 @@ public final class LilithServerEssential extends JavaPlugin {
      */
     @Override
     public void onEnable() {
-
-        // Get the server's version
-        String version = this.getServer().getBukkitVersion().split("-")[0];
-
-        // Define the minimum and maximum version numbers
-        double minVersion = 1.19;
-        double maxVersion = 1.20;
-
-        // Check if the server is running a supported version
-        try {
-            double runningVersion = Double.parseDouble(version);
-
-            if (runningVersion < minVersion || runningVersion > maxVersion) {
-                this.getLogger().severe("This server is running version " + version +
-                        ", but this plugin only supports versions " + minVersion + " to " + maxVersion + ".");
-                this.getServer().getPluginManager().disablePlugin(this);
-                return;
-            }
-
-        } catch (NumberFormatException ex) {
-            Logger logger = this.getLogger();
-            logger.severe("Failed to get the server version! Error: " + ex.getMessage());
-            this.getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
-
         // Plugin startup logic
         this.saveDefaultConfig();
         configuration = Configuration.fromConfig(getConfig());
