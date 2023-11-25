@@ -8,4 +8,4 @@
  * JavaPlugin class, setting up the plugin's functionality, including command registration
  * and configuration loading, on startup and shutdown of the plugin.
  */
-package eu.lilithmonodia.lilithserveressential;
+package eu.lilithmonodia.lilith_server_essential;

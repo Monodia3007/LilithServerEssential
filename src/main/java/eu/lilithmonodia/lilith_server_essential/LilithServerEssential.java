@@ -1,16 +1,16 @@
-package eu.lilithmonodia.lilithserveressential;
+package eu.lilithmonodia.lilith_server_essential;
 
-import eu.lilithmonodia.lilithserveressential.command.HubCommand;
-import eu.lilithmonodia.lilithserveressential.command.SetHubCommand;
-import eu.lilithmonodia.lilithserveressential.command.SetSurvivalWorldCommand;
-import eu.lilithmonodia.lilithserveressential.command.SurvivalWorldCommand;
-import eu.lilithmonodia.lilithserveressential.configuration.Configuration;
+import eu.lilithmonodia.lilith_server_essential.command.HubCommand;
+import eu.lilithmonodia.lilith_server_essential.command.SetHubCommand;
+import eu.lilithmonodia.lilith_server_essential.command.SetSurvivalWorldCommand;
+import eu.lilithmonodia.lilith_server_essential.command.SurvivalWorldCommand;
+import eu.lilithmonodia.lilith_server_essential.configuration.Configuration;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
+import java.util.Objects;
 
 /**
  * Main class for the LilithServerEssential plugin.
@@ -36,6 +36,7 @@ public final class LilithServerEssential extends JavaPlugin {
         registerCommand("survivalworld", new SurvivalWorldCommand(this));
         registerCommand("setsurvivalworld", new SetSurvivalWorldCommand(this));
     }
+
     /**
      * Reloads the configuration for this plugin.
      */
@@ -69,7 +70,7 @@ public final class LilithServerEssential extends JavaPlugin {
      */
     private <T extends CommandExecutor & TabCompleter> void registerCommand(String name, T command) {
         PluginCommand pluginCommand = getCommand(name);
-        pluginCommand.setExecutor(command);
+        Objects.requireNonNull(pluginCommand).setExecutor(command);
         pluginCommand.setTabCompleter(command);
     }
 }

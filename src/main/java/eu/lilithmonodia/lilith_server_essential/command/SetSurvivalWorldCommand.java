@@ -1,7 +1,7 @@
-package eu.lilithmonodia.lilithserveressential.command;
+package eu.lilithmonodia.lilith_server_essential.command;
 
-import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
-import eu.lilithmonodia.lilithserveressential.command.abstractCommands.SetCommand;
+import eu.lilithmonodia.lilith_server_essential.LilithServerEssential;
+import eu.lilithmonodia.lilith_server_essential.command.abstract_commands.SetCommand;
 
 /**
  * Represents a command to set the survival world in the LilithServerEssential plugin.

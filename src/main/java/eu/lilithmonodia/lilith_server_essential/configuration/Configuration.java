@@ -1,4 +1,4 @@
-package eu.lilithmonodia.lilithserveressential.configuration;
+package eu.lilithmonodia.lilith_server_essential.configuration;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -22,6 +22,7 @@ public record Configuration(String lobbyWorld, String survivalWorld, ArrayList<D
      * This method converts the configurations received from a FileConfiguration object into a Configuration record.
      *
      * @param config The FileConfiguration object from which we get the configuration details.
+     *
      * @return Configuration object with values extracted from the passed FileConfiguration object.
      */
     public static Configuration fromConfig(FileConfiguration config) {

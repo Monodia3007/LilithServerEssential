@@ -1,6 +1,6 @@
-package eu.lilithmonodia.lilithserveressential.command.abstractCommands;
+package eu.lilithmonodia.lilith_server_essential.command.abstract_commands;
 
-import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
+import eu.lilithmonodia.lilith_server_essential.LilithServerEssential;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -23,7 +23,7 @@ import java.util.List;
  */
 
 // Language: Java
-abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
+public abstract class TeleportCommand implements CommandExecutor, TabCompleter {
     /**
      * The plugin variable represents the instance of LilithServerEssential plugin.
      * It is declared as final, meaning that its reference cannot be changed once initialized.
@@ -36,7 +36,7 @@ abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
      *
      * @param plugin the LilithServerEssential plugin instance to associate with the command
      */
-    public TeleportCommand(LilithServerEssential plugin) {
+    protected TeleportCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
     }
 
@@ -45,14 +45,14 @@ abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
      *
      * @return The configuration world as a String.
      */
-    abstract public String getConfigWorld();
+    public abstract String getConfigWorld();
 
     /**
      * Get the coordinates of the configuration.
      *
      * @return a list of double values representing the coordinates of the configuration
      */
-    abstract public List<Double> getConfigCoords();
+    public abstract List<Double> getConfigCoords();
 
     /**
      * Executes the command when triggered by a player.
@@ -61,6 +61,7 @@ abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
      * @param command The command being executed.
      * @param label   The label used to trigger the command.
      * @param args    The arguments provided with the command.
+     *
      * @return True if the command was executed successfully, false otherwise.
      */
     @Override
@@ -91,6 +92,7 @@ abstract public class TeleportCommand implements CommandExecutor, TabCompleter {
      * @param command the command object being tab completed
      * @param label   the label of the command being tab completed
      * @param args    the arguments provided for the command being tab completed
+     *
      * @return a list of possible tab completions for the command
      */
     @Override

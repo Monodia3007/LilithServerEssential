@@ -15,4 +15,4 @@
  *     <li>'setsurvivalworld': Sets the world and coordinates for the survival world.</li>
  * </ul>
  */
-package eu.lilithmonodia.lilithserveressential.command;
+package eu.lilithmonodia.lilith_server_essential.command;

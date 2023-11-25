@@ -7,4 +7,4 @@
  * The Configuration record class within this package holds the pertinent configuration
  * details which are then disseminated across other parts of the plugin for the Minecraft server.
  */
-package eu.lilithmonodia.lilithserveressential.configuration;
+package eu.lilithmonodia.lilith_server_essential.configuration;

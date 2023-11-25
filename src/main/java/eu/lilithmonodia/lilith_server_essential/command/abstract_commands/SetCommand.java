@@ -1,6 +1,6 @@
-package eu.lilithmonodia.lilithserveressential.command.abstractCommands;
+package eu.lilithmonodia.lilith_server_essential.command.abstract_commands;
 
-import eu.lilithmonodia.lilithserveressential.LilithServerEssential;
+import eu.lilithmonodia.lilith_server_essential.LilithServerEssential;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -23,7 +23,8 @@ import java.util.List;
  * @see TabCompleter
  */
 
-abstract public class SetCommand implements CommandExecutor, TabCompleter {
+public abstract class SetCommand implements CommandExecutor, TabCompleter {
+    public static final String COORDINATES = "coordinates.";
     /**
      * Represents a protected final variable 'plugin' of type LilithServerEssential.
      * This variable is used in the code to reference the instance of the plugin.
@@ -35,7 +36,7 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
      *
      * @param plugin the LilithServerEssential plugin
      */
-    public SetCommand(LilithServerEssential plugin) {
+    protected SetCommand(LilithServerEssential plugin) {
         this.plugin = plugin;
     }
 
@@ -44,14 +45,14 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
      *
      * @return the command name
      */
-    abstract public String getCommandName();
+    public abstract String getCommandName();
 
     /**
      * Gets the path prefix associated with this command.
      *
      * @return the path prefix
      */
-    abstract public String getPathPrefix();
+    public abstract String getPathPrefix();
 
     /**
      * Executes the onCommand method for the given command.
@@ -60,15 +61,16 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
      * @param command the command being executed
      * @param label   the command label
      * @param args    the command arguments
+     *
      * @return true if the command executed successfully, false otherwise
      */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 4) {
             plugin.getConfig().set(getPathPrefix() + "-world", args[0]);
-            plugin.getConfig().set("coordinates." + getPathPrefix() + ".x", Double.valueOf(args[1]));
-            plugin.getConfig().set("coordinates." + getPathPrefix() + ".y", Double.valueOf(args[2]));
-            plugin.getConfig().set("coordinates." + getPathPrefix() + ".z", Double.valueOf(args[3]));
+            plugin.getConfig().set(COORDINATES + getPathPrefix() + ".x", Double.valueOf(args[1]));
+            plugin.getConfig().set(COORDINATES + getPathPrefix() + ".y", Double.valueOf(args[2]));
+            plugin.getConfig().set(COORDINATES + getPathPrefix() + ".z", Double.valueOf(args[3]));
         } else {
             sender.sendMessage("Please enter a valid argument");
             return false;
@@ -86,6 +88,7 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
      * @param command the command being executed
      * @param label   the command label
      * @param args    the command arguments
+     *
      * @return a list of tab completion options for the command arguments
      */
     @Override
@@ -108,8 +111,10 @@ abstract public class SetCommand implements CommandExecutor, TabCompleter {
                 case 4 -> {
                     return Collections.singletonList(String.valueOf(player.getLocation().z()));
                 }
+                default -> {
+                    return Collections.emptyList();
+                }
             }
-            return Collections.emptyList();
         } else {
             List<String> worlds = new ArrayList<>();
             for (World world : Bukkit.getWorlds()) {
