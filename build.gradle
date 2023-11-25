@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 group = 'eu.lilithmonodia'
@@ -43,5 +44,13 @@ processResources {
     filteringCharset 'UTF-8'
     filesMatching('plugin.yml') {
         expand props
+    }
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "Monodia3007_LilithServerEssential"
+        property "sonar.organization", "monodia3007"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
